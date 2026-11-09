@@ -14,7 +14,7 @@ export class cdkStack extends cdk.Stack {
       description: 'Current Amplify CLI env name',
     });
 
-    const dependencies: AmplifyDependentResourcesAttributes = AmplifyHelpers.addResourceDependency(this,
+    const dependencies: AmplifyDependentResourcesAttributes = AmplifyHelpers.addResourceDependency(this as any,
       amplifyResourceProps.category,
       amplifyResourceProps.resourceName,
       [
