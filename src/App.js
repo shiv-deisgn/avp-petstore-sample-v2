@@ -9,7 +9,7 @@ import { withAuthenticator,
   Flex,
   View,
   Text, 
-  Divider,Tabs, Alert, TextField, Grid,TextAreaField,
+  Divider,Tabs, TabItem, Alert, TextField, Grid,TextAreaField,
   useTheme} from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import { useState } from 'react';
@@ -61,12 +61,8 @@ function App({ signOut, user }) {
           <View padding="10px" as="div" level={1} textAlign="center" backgroundColor="var(--amplify-colors-white)" 
             width="86%" minHeight="300px" boxShadow="3px 3px 5px 6px var(--amplify-colors-neutral-60)" opacity="90">
             
-              <Tabs.Container defaultValue="sim">
-              <Tabs.List>
-                <Tabs.Item value="sim">Action simulation</Tabs.Item>
-              </Tabs.List>
-              <Tabs.Panel value="sim">
-          
+            <Tabs defaultIndex={0} >
+              <TabItem title="Action simulation">
                 <Grid templateColumns="1fr 1fr">
                   <View textAlign="left">
                   
@@ -134,8 +130,8 @@ function App({ signOut, user }) {
                     } value={authResult} /> 
                   </View>
                 </Grid>
-              </Tabs.Panel>
-            </Tabs.Container>
+              </TabItem>
+            </Tabs>
             
           </View>
           <Flex width="7%"></Flex>
